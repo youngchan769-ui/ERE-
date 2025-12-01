@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도면 자동화 도구 - 자동차 용접지그</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/designer.css">
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fa-solid fa-industry"></i>
+                    <span>도면 자동화</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">홈으로</a></li>
+                    <li><a href="index.html#products" class="nav-link">제품소개</a></li>
+                    <li><a href="index.html#contact" class="nav-link">문의하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="designer-container">
+        <!-- 사이드바: 컴포넌트 라이브러리 -->
+        <aside class="designer-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-puzzle-piece"></i> 컴포넌트</h2>
+            </div>
+            
+            <div class="component-category">
+                <h3>베이스 유닛</h3>
+                <div class="component-grid">
+                    <div class="component-item" draggable="true" data-type="base_plate">
+                        <div class="component-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <span>베이스 플레이트</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="rest_block">
+                        <div class="component-icon"><i class="fa-solid fa-cube"></i></div>
+                        <span>레스트 블록</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-category">
+                <h3>클램핑 유닛</h3>
+                <div class="component-grid">
+                    <div class="component-item" draggable="true" data-type="clamp_toggle">
+                        <div class="component-icon"><i class="fa-solid fa-hand-holding"></i></div>
+                        <span>토글 클램프</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="clamp_swing">
+                        <div class="component-icon"><i class="fa-solid fa-rotate"></i></div>
+                        <span>스윙 클램프</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="clamp_power">
+                        <div class="component-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span>파워 클램프</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="clamp_l">
+                        <div class="component-icon"><i class="fa-solid fa-l"></i></div>
+                        <span>L-클램프</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="clamp_pin">
+                        <div class="component-icon"><i class="fa-solid fa-thumbtack"></i></div>
+                        <span>핀 클램프</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-category">
+                <h3>위치 결정 유닛</h3>
+                <div class="component-grid">
+                    <div class="component-item" draggable="true" data-type="pin_round">
+                        <div class="component-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <span>라운드 핀</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="pin_diamond">
+                        <div class="component-icon"><i class="fa-regular fa-gem"></i></div>
+                        <span>다이아몬드 핀</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-category">
+                <h3>조정 유닛</h3>
+                <div class="component-grid">
+                    <div class="component-item" draggable="true" data-type="shim_pack">
+                        <div class="component-icon"><i class="fa-solid fa-align-justify"></i></div>
+                        <span>심 팩</span>
+                    </div>
+                    <div class="component-item" draggable="true" data-type="wedge_unit">
+                        <div class="component-icon"><i class="fa-solid fa-play" style="transform: rotate(30deg);"></i></div>
+                        <span>웨지 유닛</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 메인 캔버스 영역 -->
+        <main class="designer-main">
+            <header class="designer-toolbar">
+                <div class="toolbar-left">
+                    <button id="btn-select" class="tool-btn active" title="선택 (V)">
+                        <i class="fa-solid fa-arrow-pointer"></i>
+                    </button>
+                    <button id="btn-line" class="tool-btn" title="선 (L)">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <button id="btn-circle" class="tool-btn" title="원 (C)">
+                        <i class="fa-solid fa-circle"></i>
+                    </button>
+                    <button id="btn-rectangle" class="tool-btn" title="사각형 (R)">
+                        <i class="fa-solid fa-square"></i>
+                    </button>
+                    <button id="btn-text" class="tool-btn" title="텍스트 (T)">
+                        <i class="fa-solid fa-font"></i>
+                    </button>
+                    <button id="btn-clear" class="tool-btn danger" title="전체 삭제">
+                        <i class="fa-solid fa-trash"></i> 삭제
+                    </button>
+                </div>
+                <div class="toolbar-center">
+                    <span class="project-title">새 지그 레이아웃</span>
+                </div>
+                <div class="toolbar-right">
+                    <button id="btn-export" class="tool-btn primary">
+                        <i class="fa-solid fa-download"></i> 내보내기
+                    </button>
+                    <button id="btn-save" class="tool-btn primary">
+                        <i class="fa-solid fa-save"></i> 저장
+                    </button>
+                </div>
+            </header>
+            
+            <div class="canvas-wrapper" id="canvas-container">
+                <canvas id="jig-canvas"></canvas>
+                <div class="canvas-overlay-info">
+                    스케일: 1:10 | 그리드: 50mm
+                </div>
+            </div>
+        </main>
+
+        <!-- 속성 패널 -->
+        <aside class="designer-properties" id="properties-panel">
+            <h2>속성</h2>
+            <div class="no-selection">컴포넌트를 선택하여 속성을 확인하세요</div>
+            <div class="properties-content hidden">
+                <div class="prop-group">
+                    <label>타입</label>
+                    <input type="text" id="prop-type" readonly>
+                </div>
+                <div class="prop-group">
+                    <label>ID</label>
+                    <input type="text" id="prop-id" readonly>
+                </div>
+                <div class="prop-group">
+                    <label>위치 X (mm)</label>
+                    <input type="number" id="prop-x">
+                </div>
+                <div class="prop-group">
+                    <label>위치 Y (mm)</label>
+                    <input type="number" id="prop-y">
+                </div>
+                <div class="prop-group">
+                    <label>회전 (°)</label>
+                    <input type="number" id="prop-rotation">
+                </div>
+                <div class="prop-group dynamic-props" id="dynamic-props">
+                    <!-- 동적 속성이 여기에 삽입됩니다 -->
+                </div>
+                <div class="prop-actions">
+                    <button id="btn-delete-comp" class="btn-delete">삭제</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/designer.js"></script>
+</body>
+</html>
+
