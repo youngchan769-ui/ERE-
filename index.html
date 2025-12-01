@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="자동차 용접지그 전문 제조업체 - 정밀한 용접지그 솔루션을 제공합니다">
+    <title>자동차 용접지그 전문 제조 | 프리미엄 용접지그 솔루션</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 스크롤 진행 표시기 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- 네비게이션 바 -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fa-solid fa-industry"></i>
+                    <span>자동차 용접지그</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">홈</a></li>
+                    <li><a href="#about" class="nav-link">회사소개</a></li>
+                    <li><a href="#products" class="nav-link">제품소개</a></li>
+                    <li><a href="#services" class="nav-link">서비스</a></li>
+                    <li><a href="#contact" class="nav-link">문의하기</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">정밀한 자동차 용접지그 솔루션</h1>
+                <p class="hero-subtitle">최고 품질의 용접지그로 자동차 제조의 정확성과 효율성을 높이세요</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">제품 둘러보기</a>
+                    <a href="#contact" class="btn btn-secondary">견적 문의</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- 회사 소개 섹션 -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">회사 소개</h2>
+                <p class="section-subtitle">자동차 용접지그 분야의 선도 기업</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>정밀과 품질의 만남</h3>
+                    <p>
+                        저희는 자동차 제조업계에서 요구되는 최고 수준의 용접지그를 제조하는 전문 기업입니다. 
+                        수십 년간의 경험과 노하우를 바탕으로 고객의 다양한 요구사항에 맞는 맞춤형 용접지그 솔루션을 제공합니다.
+                    </p>
+                    <p>
+                        최신 설비와 정밀한 품질 관리 시스템을 통해 제품의 정확성과 내구성을 보장하며, 
+                        자동차 제조 공정의 효율성을 극대화하는 데 기여하고 있습니다.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="20">0</div>
+                            <div class="stat-label">년 경력</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">제작 실적</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="98">0</div>
+                            <div class="stat-label">고객 만족도</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-gallery">
+                        <div class="gallery-item active">
+                            <div class="image-placeholder">
+                                <i class="fa-solid fa-industry"></i>
+                                <p>제조 현장 이미지 1</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="image-placeholder">
+                                <i class="fa-solid fa-cogs"></i>
+                                <p>제조 현장 이미지 2</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="image-placeholder">
+                                <i class="fa-solid fa-toolbox"></i>
+                                <p>제조 현장 이미지 3</p>
+                            </div>
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-btn prev" id="galleryPrev">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="gallery-btn next" id="galleryNext">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="gallery-indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                            <span class="indicator" data-index="2"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 제품 소개 섹션 -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">제품 소개</h2>
+                <p class="section-subtitle">다양한 용도에 맞는 전문 용접지그 제품</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-modal="product1">
+                    <div class="product-icon">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="product-name">차체 용접지그</h3>
+                    <p class="product-description">
+                        자동차 차체 부품의 정밀한 용접을 위한 맞춤형 지그 시스템으로, 
+                        높은 정확도와 안정성을 제공합니다.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fa-solid fa-check"></i> 고정밀도 위치 결정</li>
+                        <li><i class="fa-solid fa-check"></i> 내구성 강화 설계</li>
+                        <li><i class="fa-solid fa-check"></i> 빠른 교체 가능</li>
+                    </ul>
+                    <button class="product-detail-btn">자세히 보기</button>
+                </div>
+                <div class="product-card" data-modal="product2">
+                    <div class="product-icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <h3 class="product-name">부품 용접지그</h3>
+                    <p class="product-description">
+                        다양한 자동차 부품의 소량 다품종 생산에 최적화된 모듈형 용접지그입니다.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fa-solid fa-check"></i> 모듈형 설계</li>
+                        <li><i class="fa-solid fa-check"></i> 유연한 구성</li>
+                        <li><i class="fa-solid fa-check"></i> 경제적 솔루션</li>
+                    </ul>
+                    <button class="product-detail-btn">자세히 보기</button>
+                </div>
+                <div class="product-card" data-modal="product3">
+                    <div class="product-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="product-name">자동화 용접지그</h3>
+                    <p class="product-description">
+                        로봇 용접 시스템과 연동되는 고정밀 자동화 용접지그로 생산 효율을 극대화합니다.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fa-solid fa-check"></i> 로봇 연동 최적화</li>
+                        <li><i class="fa-solid fa-check"></i> 자동 클램핑 시스템</li>
+                        <li><i class="fa-solid fa-check"></i> 스마트 센서 통합</li>
+                    </ul>
+                    <button class="product-detail-btn">자세히 보기</button>
+                </div>
+                <div class="product-card" data-modal="product4">
+                    <div class="product-icon">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="product-name">맞춤형 용접지그</h3>
+                    <p class="product-description">
+                        고객의 특수한 요구사항에 맞춘 완전 맞춤형 용접지그 설계 및 제작 서비스입니다.
+                    </p>
+                    <ul class="product-features">
+                        <li><i class="fa-solid fa-check"></i> 전문 설계 팀</li>
+                        <li><i class="fa-solid fa-check"></i> 3D 모델링 제공</li>
+                        <li><i class="fa-solid fa-check"></i> 프로토타입 제작</li>
+                    </ul>
+                    <button class="product-detail-btn">자세히 보기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 섹션 -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">서비스</h2>
+                <p class="section-subtitle">전문적인 서비스로 고객을 지원합니다</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-drafting-compass"></i>
+                    </div>
+                    <h3>설계 및 컨설팅</h3>
+                    <p>고객의 요구사항을 분석하여 최적의 용접지그 설계안을 제시하고 전문 컨설팅을 제공합니다.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3>제조 및 조립</h3>
+                    <p>최신 설비와 정밀 가공 기술로 고품질 용접지그를 제조하고 완벽하게 조립합니다.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-tools"></i>
+                    </div>
+                    <h3>유지보수 및 수리</h3>
+                    <p>제작한 용접지그의 장기적인 안정적 사용을 위한 정기 점검 및 수리 서비스를 제공합니다.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>교육 및 지원</h3>
+                    <p>용접지그 사용법과 유지보수 방법에 대한 교육 프로그램을 제공하여 효율적인 사용을 지원합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 섹션 -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">문의하기</h2>
+                <p class="section-subtitle">견적 및 문의사항을 남겨주시면 빠르게 답변드리겠습니다</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>연락처 정보</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>전화</strong>
+                            <p>02-1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>이메일</strong>
+                            <p>info@weldingjig.co.kr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>주소</strong>
+                            <p>서울특별시 강남구 테헤란로 123</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>운영시간</strong>
+                            <p>평일 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="customerName">이름 *</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerCompany">회사명</label>
+                        <input type="text" id="customerCompany" name="customerCompany">
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">연락처 *</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">이메일 *</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryType">문의 유형 *</label>
+                        <select id="inquiryType" name="inquiryType" required>
+                            <option value="">선택하세요</option>
+                            <option value="견적문의">견적 문의</option>
+                            <option value="제품문의">제품 문의</option>
+                            <option value="기술상담">기술 상담</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryMessage">문의 내용 *</label>
+                        <textarea id="inquiryMessage" name="inquiryMessage" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">문의하기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>자동차 용접지그</h4>
+                    <p>정밀한 용접지그 솔루션으로 자동차 제조의 미래를 만들어갑니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>빠른 링크</h4>
+                    <ul>
+                        <li><a href="#home">홈</a></li>
+                        <li><a href="#about">회사소개</a></li>
+                        <li><a href="#products">제품소개</a></li>
+                        <li><a href="#contact">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i> 02-1234-5678</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@weldingjig.co.kr</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 서울특별시 강남구 테헤란로 123</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 자동차 용접지그. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 제품 상세 모달 -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- 모달 내용이 동적으로 삽입됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 로딩 오버레이 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
