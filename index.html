@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <!-- 스크롤 진행 표시기 -->
@@ -46,7 +47,6 @@
                 <p class="hero-subtitle">최고 품질의 용접지그로 자동차 제조의 정확성과 효율성을 높이세요</p>
                 <div class="hero-buttons">
                     <a href="#products" class="btn btn-primary">제품 둘러보기</a>
-                    <a href="designer.html" class="btn btn-secondary">도면 자동화 시작</a>
                     <a href="#contact" class="btn btn-secondary">견적 문의</a>
                 </div>
             </div>
@@ -368,6 +368,107 @@
         </div>
     </div>
 
+    <!-- 도면 챗봇 -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-header-content">
+                <i class="fa-solid fa-robot"></i>
+                <h3>도면 상담 챗봇</h3>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>안녕하세요! 자동차 용접지그 도면 상담 챗봇입니다. 도면 설계, 제작, 문의사항에 대해 도움을 드리겠습니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="질문을 입력하세요..." autocomplete="off">
+            <button id="chatbotSend" class="chatbot-send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fa-solid fa-comments"></i>
+        <span class="chatbot-badge">1</span>
+    </button>
+
+    <!-- 도면 작도 도구 -->
+    <div class="drawing-tool-container" id="drawingToolContainer">
+        <div class="drawing-tool-header">
+            <div class="drawing-tool-header-content">
+                <i class="fa-solid fa-drafting-compass"></i>
+                <h3>도면 작도 도구</h3>
+            </div>
+            <div class="drawing-tool-controls">
+                <button class="drawing-tool-btn" id="btn2DView" title="2D 뷰">
+                    <i class="fa-solid fa-square"></i>
+                </button>
+                <button class="drawing-tool-btn" id="btn3DView" title="3D 뷰">
+                    <i class="fa-solid fa-cube"></i>
+                </button>
+                <button class="drawing-tool-btn" id="btnClearDrawing" title="초기화">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                <button class="drawing-tool-close" id="drawingToolClose">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="drawing-tool-body">
+            <div class="drawing-commands-panel">
+                <h4>작도 명령어</h4>
+                <div class="command-list">
+                    <div class="command-item">
+                        <code>LINE x1 y1 x2 y2</code>
+                        <span>선 그리기</span>
+                    </div>
+                    <div class="command-item">
+                        <code>CIRCLE x y radius</code>
+                        <span>원 그리기</span>
+                    </div>
+                    <div class="command-item">
+                        <code>RECTANGLE x y width height</code>
+                        <span>사각형 그리기</span>
+                    </div>
+                    <div class="command-item">
+                        <code>ARC x y radius startAngle endAngle</code>
+                        <span>호 그리기</span>
+                    </div>
+                    <div class="command-item">
+                        <code>EXTRUDE height</code>
+                        <span>2D를 3D로 돌출</span>
+                    </div>
+                </div>
+                <div class="command-input-area">
+                    <input type="text" id="drawingCommandInput" placeholder="명령어 입력 (예: LINE 0 0 100 100)">
+                    <button id="drawingCommandExecute" class="btn btn-primary">실행</button>
+                </div>
+            </div>
+            <div class="drawing-canvas-area">
+                <div class="drawing-view-2d" id="drawingView2D">
+                    <canvas id="drawingCanvas2D"></canvas>
+                </div>
+                <div class="drawing-view-3d hidden" id="drawingView3D">
+                    <div id="drawingCanvas3D"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="drawing-tool-toggle" id="drawingToolToggle">
+        <i class="fa-solid fa-drafting-compass"></i>
+    </button>
+
     <script src="js/app.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/drawing-tool.js"></script>
 </body>
 </html>
